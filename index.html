@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pawcrate Sign-Up Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="hero">
+            <h1>PAWCRATE</h1>
+            <div class="description">
+              <p>includes:</p>
+              <ul>
+                <li>Homemade natural treats</li>
+                <li>Toys, gears and gadgets</li>
+                <li>Free shipping</li>
+              </ul>
+            </div>
+        </div>
+        <div class="entry">
+          <h2>Get started with Pawcrate</h2>
+          <p>Treat your pet to something new every month. Because they deserve it.</p>
+          <form action="#" method="post">
+            <label for="name">Name<span class="required" aria-required="true">*</span></label>
+            <input type="text" name="user-name" id="name" placeholder="Jane Doe"required>
+
+            <label for="email">Email<span class="required" aria-required="true">*</span></label>
+            <input type="email" name="user-email" id="email" placeholder="name@email.com" required>
+
+            <label for="phonenumber">Phone number</label>
+            <input type="tel" name="user-phonenumber" id="phonenumber" minlength="10" placeholder="000-1234-5678">
+
+            <label for="password">Password<span class="required" aria-required="true">*</span></label>
+            <input type="password" name="user-password" id="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
+            <!--Minimum eight characters, at least one letter and one number:-->
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Show password</label>
+
+            <button type="submit">Sign Up</button>
+          </form>
+          <p>Created by angieaugy</p>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+}
+
+.hero {
+    background-image: url("background.jpg");
+    background-size: 100%;
+    flex: 0.9;
+}
+
+.entry {
+    background-color: darkcyan;
+    flex: 1.1;
+}
+
+.required {
+    color: red;
+}
