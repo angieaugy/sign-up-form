@@ -34,7 +34,7 @@ html {
 }
 
 .logo, .description {
-    background-color: rgb(255, 255, 255);
+    background-color: #FAF9F6;
     box-shadow: rgb(26, 26, 27, 0.7) 7px 7px 0 1px;
     text-align: center;
     width: fit-content;
@@ -83,10 +83,10 @@ html {
 .entry {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: darkcyan;
+    justify-content: center;
     flex: 1;
-    padding: 70px;
+    padding: 100px;
+    background-color: #FAF9F6;
 }
 
 .entry h2, p {
@@ -102,18 +102,23 @@ html {
     font-size: clamp(1.2rem, 2.5vw, 2.5rem);
 }
 
-.entry form {
+#form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 25px;
+    outline: 0;
 }
 
 .form-input {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    width:90%;
+    width:100%;
+}
+
+.form-input:nth-child(4) {
+    margin-bottom: 5px;
 }
 
 .form-input label {
@@ -122,34 +127,68 @@ html {
 }
 
 .form-input input {
-    border:none;
-    border-radius: 10px;
+    border:1px solid rgb(171, 171, 171);
+    border-radius: 5px;
     height: 25px;
     padding: 5px;
 }
 
-.form-input input:focus {
+form input:not(:focus):invalid {
+    border:1px solid rgb(171, 171, 171);
+}
+
+form input:focus:invalid {
+    border:1px solid rgb(171, 171, 171) !important;
+}
+
+form input:focus {
     outline: 0;
 }
 
-.form-input input:valid {
+.form-input input.error-input:invalid {
     outline: 0;
-    background-color: rgb(203, 255, 203) ;
+    border-color: #f15d4f;
 }
 
-.showPW {
-    display: flex;
-    flex-direction: row;
+.form-input:nth-child(4) {
+    position: relative;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 58%;
+    right: 2%;
+    cursor: pointer;
+    color: rgb(212, 212, 212);
+  }
+
+.note {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    align-self: flex-end;
 }
 
 .required {
     color: #f15d4f;
 }
 
-p.footer {
-    margin-top: 20px;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    text-align: center;
+form button {
+    align-self: flex-end;
+    background-color: #245a9d ;
+    color: #FAF9F6;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: clamp(1.65rem, 1.8vw, 3rem);
+    border:0;
+    border-radius: 10px;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background-color:  #1c477c ;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -171,5 +210,9 @@ p.footer {
 
     .form-input input{
         width: auto;
+    }
+
+    form button {
+        margin-top: 30px;
     }
 }

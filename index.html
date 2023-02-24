@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pawcrate Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     
   </head>
   <body>
@@ -26,7 +27,7 @@
             <h2>Get started with PawCrate</h2>
             <p>Treat your pet to something new every month. Because they deserve it.</p>  
           </div>
-          <form action="#" method="post">
+          <form action="#" method="post" id="form">
             <div class="form-input">
               <label for="name">Name<span class="required" aria-required="true">*</span></label>
               <input type="text" name="user-name" id="name" placeholder="Jane Doe"required>
@@ -37,21 +38,42 @@
             </div>
             <div class="form-input">
               <label for="phonenumber">Phone number</label>
-              <input type="tel" name="user-phonenumber" id="phonenumber" minlength="10" placeholder="000-1234-5678">
+              <input type="tel" name="user-phonenumber" id="phonenumber" minlength="10" placeholder="000 1234 5678">
             </div>
             <div class="form-input">
               <label for="password">Password<span class="required" aria-required="true">*</span></label>
               <input type="password" name="user-password" id="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
               <!--Minimum eight characters, at least one letter and one number:-->
+              <i class="fa-solid fa-eye" id="eye" aria-label="Show Password"></i>
             </div>
-            <div class="form-input showPW">
-              <input type="checkbox" id="showPassword">
-              <label for="showPassword">Show password</label>
-            </div>
+            <span class="note">Mininum eight characters, at least one letter and one number</span>
             <button type="submit">Sign Up</button>
           </form>
-          <p class="footer">Created by angieaugy</p>
         </div>
     </div>
   </body>
 </html>
+
+<script>
+
+    /* blur event for all input fields in form */
+  document.querySelectorAll("#form input").forEach(function(element) {
+      element.addEventListener('blur', function() {
+          // if input field passes validation remove the error class, else add it
+          if(this.checkValidity())
+              this.classList.remove('error-input');
+          else
+              this.classList.add('error-input');
+      });
+  });
+
+  const passwordInput = document.querySelector("#password")
+  const eye = document.querySelector("#eye")
+
+  eye.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput.setAttribute("type", type)
+})
+
+</script>
