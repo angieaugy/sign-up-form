@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fredoka+One&display=swap');
+
+
+html {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif
+}
+
 * {
     margin: 0;
     padding: 0;
+    color:#1a1a1b;
 }
+
+
 
 .container {
     display: flex;
-    flex-direction: row;
     width: 100vw;
     height: 100vh;
     margin: auto;
@@ -13,15 +23,69 @@
 
 .hero {
     background-image: url("background.jpg");
-    background-size: 100%;
-    flex: 0.9;
+    background-size: cover;
+    flex: 1;
+}
+
+.logo, .description {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(26, 26, 27, 0.7) 7px 7px 0 1px;
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+.logo img {
+    min-width: 40px;
+    width: 3vw;
+    margin-right: 13px;
+    align-self: center;
+    flex: 0 0 auto;
+}
+
+.logo h1 {
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.description {
+    margin-top: 40px;
+    margin-bottom: 57px;
+    padding: 30px;
 }
 
 .entry {
     background-color: darkcyan;
-    flex: 1.1;
+    flex: 1;
 }
 
 .required {
     color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .logo img {
+        min-width: none;
+        width: 1vw;
+    }
+
+    .description {
+        
+    }
 }
