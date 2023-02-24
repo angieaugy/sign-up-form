@@ -22,27 +22,35 @@
             </div>
         </div>
         <div class="entry">
-          <h2>Get started with Pawcrate</h2>
-          <p>Treat your pet to something new every month. Because they deserve it.</p>
+          <div>
+            <h2>Get started with PawCrate</h2>
+            <p>Treat your pet to something new every month. Because they deserve it.</p>  
+          </div>
           <form action="#" method="post">
-            <label for="name">Name<span class="required" aria-required="true">*</span></label>
-            <input type="text" name="user-name" id="name" placeholder="Jane Doe"required>
-
-            <label for="email">Email<span class="required" aria-required="true">*</span></label>
-            <input type="email" name="user-email" id="email" placeholder="name@email.com" required>
-
-            <label for="phonenumber">Phone number</label>
-            <input type="tel" name="user-phonenumber" id="phonenumber" minlength="10" placeholder="000-1234-5678">
-
-            <label for="password">Password<span class="required" aria-required="true">*</span></label>
-            <input type="password" name="user-password" id="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
-            <!--Minimum eight characters, at least one letter and one number:-->
-            <input type="checkbox" id="showPassword">
-            <label for="showPassword">Show password</label>
-
+            <div class="form-input">
+              <label for="name">Name<span class="required" aria-required="true">*</span></label>
+              <input type="text" name="user-name" id="name" placeholder="Jane Doe"required>
+            </div>
+            <div class="form-input">
+              <label for="email">Email<span class="required" aria-required="true">*</span></label>
+              <input type="email" name="user-email" id="email" placeholder="name@email.com" required>
+            </div>
+            <div class="form-input">
+              <label for="phonenumber">Phone number</label>
+              <input type="tel" name="user-phonenumber" id="phonenumber" minlength="10" placeholder="000-1234-5678">
+            </div>
+            <div class="form-input">
+              <label for="password">Password<span class="required" aria-required="true">*</span></label>
+              <input type="password" name="user-password" id="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
+              <!--Minimum eight characters, at least one letter and one number:-->
+            </div>
+            <div class="form-input showPW">
+              <input type="checkbox" id="showPassword">
+              <label for="showPassword">Show password</label>
+            </div>
             <button type="submit">Sign Up</button>
           </form>
-          <p>Created by angieaugy</p>
+          <p class="footer">Created by angieaugy</p>
         </div>
     </div>
   </body>
